@@ -24,10 +24,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import com.mojang.serialization.MapCodec;
 
 /**
  * A single business-class suite. Which of the six row positions it represents is stored in
@@ -37,8 +39,15 @@ import org.jetbrains.annotations.Nullable;
  */
 public class SeatBlock extends BaseEntityBlock {
 
+    public static final MapCodec<SeatBlock> CODEC = simpleCodec(SeatBlock::new);
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
     public static final EnumProperty<SeatType> SEAT_TYPE = EnumProperty.create("seat_type", SeatType.class);
-    public static final Direction.Property FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty DOOR_OPEN = BooleanProperty.create("door_open");
     public static final BooleanProperty RECLINED = BooleanProperty.create("reclined");
     public static final BooleanProperty OCCUPIED = BooleanProperty.create("occupied");
