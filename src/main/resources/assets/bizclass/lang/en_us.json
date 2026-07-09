@@ -1,0 +1,8 @@
+{
+  "itemGroup.bizclass.business_class": "Business Class Seats",
+  "block.bizclass.business_seat": "Business Class Suite",
+  "block.bizclass.ife_screen": "IFE Screen",
+  "item.bizclass.business_row_placer": "Business Row Placer",
+  "block.bizclass.economy_seat_armrest_ife": "Economy Seat (Armrest IFE)",
+  "block.bizclass.economy_seat_back_only": "Economy Seat (Back-Only IFE)"
+}
