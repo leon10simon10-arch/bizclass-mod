@@ -20,21 +20,6 @@ repositories {
     maven { url = 'https://maven.neoforged.net/releases' }
 }
 
-runs {
-    configureEach {
-        systemProperty 'forge.logging.markers', 'REGISTRIES'
-        logLevel = org.slf4j.event.Level.DEBUG
-    }
-    client { systemProperty 'neoforge.enabledGameTestNamespaces', mod_id }
-    server { systemProperty 'neoforge.enabledGameTestNamespaces', mod_id; programArgument '--nogui' }
-    data {
-        data()
-        programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
-    }
-}
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
-
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 }
