@@ -31,22 +31,14 @@ jobs:
           echo "Found Gradle project at: $PROJECT_DIR"
           echo "project_dir=$PROJECT_DIR" >> "$GITHUB_OUTPUT"
 
-      - name: Grant execute permission for gradlew
-        working-directory: ${{ steps.locate.outputs.project_dir }}
-        run: chmod +x gradlew || true
-
-      - name: Generate Gradle wrapper if missing
-        working-directory: ${{ steps.locate.outputs.project_dir }}
-        run: |
-          if [ ! -f "./gradlew" ]; then
-            sudo apt-get update && sudo apt-get install -y gradle
-            gradle wrapper --gradle-version 8.8
-            chmod +x ./gradlew
-          fi
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.8
 
       - name: Build with Gradle
         working-directory: ${{ steps.locate.outputs.project_dir }}
-        run: ./gradlew build --no-daemon --stacktrace
+        run: gradle build --no-daemon --stacktrace
 
       - name: Upload built jar
         uses: actions/upload-artifact@v4
