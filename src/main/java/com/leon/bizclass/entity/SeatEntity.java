@@ -9,7 +9,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.PortalInfo;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -97,10 +96,5 @@ public class SeatEntity extends Entity {
     @Override
     public boolean isPushable() {
         return false;
-    }
-
-    @Override
-    public double getPassengersRidingOffset() {
-        return 0.0;
     }
 }
