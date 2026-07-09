@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "bizclass:block/seat_top",
+    "bottom": "bizclass:block/pod_side",
+    "front": "bizclass:block/pod_door_open",
+    "side": "bizclass:block/pod_side"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "bizclass:block/ife_screen_side",
+    "bottom": "bizclass:block/ife_screen_side",
+    "front": "bizclass:block/ife_screen_front",
+    "side": "bizclass:block/ife_screen_side"
+  }
+}

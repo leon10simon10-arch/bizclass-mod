@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "bizclass:block/ife_screen"
+    },
+    "facing=south": {
+      "model": "bizclass:block/ife_screen",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bizclass:block/ife_screen",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "bizclass:block/ife_screen",
+      "y": 90
+    }
+  }
+}
